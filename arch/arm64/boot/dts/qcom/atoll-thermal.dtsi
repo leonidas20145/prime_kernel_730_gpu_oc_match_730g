@@ -1144,13 +1144,19 @@
 			};
 
 			skin_gold_trip: gold-trip {
-				temperature = <47000>;
+				temperature = <50000>;
 				hysteresis = <0>;
 				type = "passive";
 			};
 
 			skin_modem_trip1_hvx_gpu: modem-trip1-hvx-gpu {
 				temperature = <48000>;
+				hysteresis = <4000>;
+				type = "passive";
+			};
+
+			skin_gpu_trip: gpu-skin-trip {
+				temperature = <51000>;
 				hysteresis = <4000>;
 				type = "passive";
 			};
@@ -1162,7 +1168,7 @@
 			};
 
 			skin_silver_trip: silver-trip {
-				temperature = <50000>;
+				temperature = <53000>;
 				hysteresis = <0>;
 				type = "passive";
 			};
@@ -1220,7 +1226,7 @@
 						(THERMAL_MAX_LIMIT-7)>;
 			};
 			skin_gpu {
-				trip = <&skin_modem_trip1_hvx_gpu>;
+				trip = <&skin_gpu_trip>;
 				cooling-device = <&msm_gpu (THERMAL_MAX_LIMIT-3)
 						(THERMAL_MAX_LIMIT-3)>;
 			};
